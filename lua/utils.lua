@@ -26,4 +26,13 @@ function M.get_help_for_current_identifier()
     end
 end
 
+function M.diff_original()
+    print("diff?", vim.inspect(vim.wo.diff))
+    if vim.wo.diff then
+        vim.cmd("diffoff | only")
+    else
+        vim.cmd("DiffOrig")
+    end
+end
+
 return M

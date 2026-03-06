@@ -53,3 +53,6 @@ vim.keymap.set(
     require("utils").get_help_for_current_identifier,
     { desc = "Call :h <identifier> for identifier under cursor, uses treesitter to parse" }
 )
+
+-- diff toggle
+vim.keymap.set("n", "\\", require("utils").diff_original, { desc = "Diff with original toggle" })

@@ -35,3 +35,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank({ higroup = "IncSearch", timeout = 250 })
     end,
 })
+
+vim.api.nvim_create_user_command("DiffOrig", function()
+    vim.cmd("vert new | set bt=nofile | r ++edit # | 0d_ | diffthis")
+    vim.cmd("wincmd p | diffthis")
+end, {})
